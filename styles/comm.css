@@ -1,0 +1,103 @@
+
+body {
+    background-color: #f6f6f6;
+}
+/* ------------------background---------------- */
+.bubbles {
+    position: relative;
+    display: flex;
+    position: fixed;
+    filter: blur(2px);
+    z-index: -10;
+}
+
+.bubbles span {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: #4fc3dc;
+    margin: 0 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #459fb344,
+        0 0 50px #77def5,
+        0 0 100px #4fc3dc;
+    animation: bubbleup 20s linear infinite;
+    animation-duration: calc(180s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background: #ff2d73;
+    box-shadow: 0 0 0 10px #ff2d7344,
+        0 0 50px #ff2d73,
+        0 0 100px #ff2d73;
+}
+
+@keyframes bubbleup {
+    0% {
+        transform: translateY(100vh) scale(.1);
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+/* -----------------fixed------------------ */
+.fixed-widgets {
+    position: fixed;
+    right: 32px;
+    bottom: 102px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.fixed-widgets span {
+    width: 40px;
+    height: 40px;
+    margin: 2px 0;
+    line-height: 42px;
+    font-size: 22px;
+}
+
+.zhuanzhuan{
+    animation: zhuan 1.2s infinite;
+}
+
+@keyframes zhuan {
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
+/* ------------------comm------------------ */
+.comm-left {
+    background-color: rgba(255, 255, 255, 0.94);
+    border: 2px solid rgba(222, 222, 222, 0.5);
+    padding: .3rem;
+    margin-left: .5rem;
+    border-radius: .3rem;
+    border-bottom: 1px solid #eee;
+    min-height: 27rem;
+}
+
+.comm-right {
+    /* background-color: #FFF; */
+    margin-left: .5rem;
+    /* padding: .3rem;
+    overflow:hidden; */
+    border-radius: .3rem;
+    /* border-bottom: 1px solid #eee; */
+}
+
+.comm-main {
+    margin-top: .5rem;
+}
+
+/* --------------breadcrumb---------------- */
+.breadcrumb-div {
+    padding: .5rem;
+    border-bottom: 1px solid #eee;
+    background-color: #eef2f7;
+}
